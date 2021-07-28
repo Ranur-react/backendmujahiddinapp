@@ -7,7 +7,7 @@ if (isset($_POST['kode_datadonatur'])) {
     $alamatdonatur = $_POST['alamat_donatur'];
     $nohpdonatur = $_POST['nohp_donatur'];
 
-    $query = mysqli_query($conn, " INSERT INTO `db_mujahiddin`.`tb_datadonatur` (`kode_datadonatur`, `nama_datadonatur`, `alamat_donatur`, `nohp_donatur`) 
+    $query = mysqli_query($conn, " INSERT INTO `tb_datadonatur` (`kode_datadonatur`, `nama_datadonatur`, `alamat_donatur`, `nohp_donatur`) 
     VALUES ('$kodedatadonatur', ' $namadatadonatur', '$alamatdonatur', '$nohpdonatur'); ");
 
     if ($query) {
