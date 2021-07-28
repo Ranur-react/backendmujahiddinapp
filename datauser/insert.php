@@ -8,7 +8,7 @@ if (isset($_POST['kode_user'])) {
     $passworduser = $_POST['password_user'];
     $leveluser = $_POST['level_user'];
 
-    $query = mysqli_query($conn, " INSERT INTO db_mujahiddin.tb_user (kode_user, nama_user, username_user, password_user, level_user)
+    $query = mysqli_query($conn, " INSERT INTO tb_user (kode_user, nama_user, username_user, password_user, level_user)
     values ('$kodeuser', '$namauser', '$usernameuser', '$passworduser', '$leveluser');");
 
     if ($query) {
@@ -22,5 +22,6 @@ if (isset($_POST['kode_user'])) {
     $data['pesan'] = "Data Tidak Dapat Diakses";
     $data['status'] = false;
 }
+
 echo json_encode($data);
 ?>

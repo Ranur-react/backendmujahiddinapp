@@ -1,15 +1,14 @@
 <?php
 include '../koneksi.php';
-if (isset($_POST['kode_user'])) {
+if (isset($_POST['kode_datadonatur'])) {
 
-    $kodeuser = $_POST['kode_user'];
-    $namauser = $_POST['nama_user'];
-    $usernameuser = $_POST['username_user'];
-    $passworduser = $_POST['password_user'];
-    $leveluser = $_POST['level_user'];
+    $kodedatadonatur = $_POST['kode_datadonatur'];
+    $namadatadonatur = $_POST['nama_datadonatur'];
+    $alamatdonatur = $_POST['alamat_donatur'];
+    $nohpdonatur = $_POST['nohp_donatur'];
 
-    $query = mysqli_query($conn, " INSERT INTO db_mujahiddin.tb_user (kode_user, nama_user, username_user, password_user, level_user)
-    values ('$kodeuser', '$namauser', '$usernameuser', '$passworduser', '$leveluser');");
+    $query = mysqli_query($conn, " INSERT INTO `db_mujahiddin`.`tb_datadonatur` (`kode_datadonatur`, `nama_datadonatur`, `alamat_donatur`, `nohp_donatur`) 
+    VALUES ('$kodedatadonatur', ' $namadatadonatur', '$alamatdonatur', '$nohpdonatur'); ");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil";
