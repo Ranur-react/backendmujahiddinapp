@@ -5,7 +5,7 @@ if (isset($_POST['kodkatgr_infak'])) {
     $kodkatgrinfak = $_POST['kodkatgr_infak'];
     $namakatgrinfak = $_POST['namakatgr_infak'];
 
-    $query = mysqli_query($conn, " INSERT INTO `db_mujahiddin`.`tb_infak` (`kodkatgr_infak`, `namakatgr_infak`) 
+    $query = mysqli_query($conn, " INSERT INTO `tb_infak` (`kodkatgr_infak`, `namakatgr_infak`) 
     VALUES ('$kodkatgrinfak', '$namakatgrinfak'); ");
 
     if ($query) {

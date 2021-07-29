@@ -8,7 +8,7 @@ if (isset($_POST['kode_datakegiatan'])) {
     $idpematerikegiatan = $_POST['idpematerikegiatan'];
 
     // $query = mysqli_query($conn, " INSERT INTO `tb_datakegiatan` (`kode_datakegiatan`, `hari_datakegiatan`, `id_datapemateri`) VALUES ('$kode_datakegiatan',  ' $harikegiatan', '$waktukegiatan', '$idpematerikegiatan'); ");
-    $query = mysqli_query($conn, " INSERT INTO `db_mujahiddin`.`tb_datakegiatan` (`kode_datakegiatan`, `hari_datakegiatan`, `id_datapemateri`) VALUES ('$kode_datakegiatan', '$harikegiatan', '$idpematerikegiatan'); ");
+    $query = mysqli_query($conn, " INSERT INTO `tb_datakegiatan` (`kode_datakegiatan`, `hari_datakegiatan`, `id_datapemateri`) VALUES ('$kode_datakegiatan', '$harikegiatan', '$idpematerikegiatan'); ");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil";
@@ -23,4 +23,5 @@ if (isset($_POST['kode_datakegiatan'])) {
     $data['status'] = false;
 }
 echo json_encode($data);
-da
+
+?>
