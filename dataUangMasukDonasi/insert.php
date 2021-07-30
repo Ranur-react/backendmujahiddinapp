@@ -4,9 +4,10 @@ if (isset($_POST['id_uangmasuk'])) {
     $id_uangmasuk = $_POST['id_uangmasuk'];
     $tanggal_donmasuk = $_POST['tanggal_donmasuk'];
     $iddon_donmasuk = $_POST['iddon_donmasuk'];
+    $jumlah_donmasuk = $_POST['jumlah_donmasuk'];
     $ket_donmasuk = $_POST['ket_donmasuk'];
 
-    $query = mysqli_query($conn, "INSERT INTO `tb_donasimasuk` VALUES ('$id_uangmasuk', '$tanggal_donmasuk','$iddon_donmasuk','$ket_donmasuk');");
+    $query = mysqli_query($conn, "INSERT INTO `tb_donasimasuk` VALUES ('$id_uangmasuk', '$tanggal_donmasuk','$iddon_donmasuk','$jumlah_donmasuk','$ket_donmasuk');");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil";
