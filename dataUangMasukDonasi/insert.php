@@ -15,7 +15,7 @@ if (isset($_POST['id_uangmasuk'])) {
     } else {
         $data['pesan'] = "Data anda tidak valid";
         $data['status'] = false;
-        $data['data'] = $_POST;
+        //$data['data'] = $_POST;
     }
 } else {
     $data['pesan'] = "Data Tidak Dapat Diakses";
