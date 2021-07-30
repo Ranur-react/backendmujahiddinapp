@@ -1,6 +1,6 @@
 <?php
 include '../koneksi.php';
-$query = mysqli_query($conn, " SELECT * FROM tb_donasimasuk;");
+$query = mysqli_query($conn, " SELECT tanggal_donmasuk,jumlah_donmasuk,* FROM tb_donasimasuk;");
 
 if ($query) {
     $database = [];
