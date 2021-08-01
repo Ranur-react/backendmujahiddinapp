@@ -7,7 +7,7 @@ if (isset($_POST['id_datainfak'])) {
     $idkatgr_datainfak = $_POST['idkatgr_datainfak'];
     $jumlah_datainfak = $_POST['jumlah_datainfak'];
 
-    $query = mysqli_query($conn, " INSERT INTO `tb_infak` 
+    $query = mysqli_query($conn, " INSERT INTO `tb_datainfak` 
     VALUES ('$id_datainfak', '$tanggal_datainfak','$idkatgr_datainfak','$jumlah_datainfak'); ");
 
     if ($query) {
