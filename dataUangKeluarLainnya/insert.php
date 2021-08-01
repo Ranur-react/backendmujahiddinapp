@@ -9,6 +9,7 @@ if (isset($_POST['id_keluar'])) {
 
     $query = mysqli_query($conn, " INSERT INTO `tb_uangkeluarlainnya` 
     VALUES ('$id_keluar', '$tanggal_keluar','$uraian_keluar','$jumlah_keluar'); ");
+    
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil";
