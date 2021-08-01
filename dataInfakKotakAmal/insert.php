@@ -16,6 +16,7 @@ if (isset($_POST['id_datainfak'])) {
     } else {
         $data['pesan'] = "Data anda tidak valid";
         $data['status'] = false;
+        $data['datatidakvakid'] = $_POST;
     }
 } else {
     $data['pesan'] = "Data Tidak Dapat Diakses";
