@@ -2,13 +2,13 @@
 include '../koneksi.php';
 if (isset($_POST['id_keluar'])) {
 
-    $id_dataspenerima = $_POST['id_keluar'];
-    $nama_penerima = $_POST['tanggal_keluar'];
-    $alamat_penerima = $_POST['uraian_keluar'];
-    $nohp_penerima = $_POST['jumlah_keluar'];
+    $id_keluar = $_POST['id_keluar'];
+    $tanggal_keluar = $_POST['tanggal_keluar'];
+    $uraian_keluar = $_POST['uraian_keluar'];
+    $jumlah_keluar = $_POST['jumlah_keluar'];
 
     $query = mysqli_query($conn, " INSERT INTO `tb_uangkeluarlainnya` 
-    VALUES ('$id_dataspenerima', '$nama_penerima','$alamat_penerima','$nohp_penerima'); ");
+    VALUES ('$id_keluar', '$tanggal_keluar','$uraian_keluar','$jumlah_keluar'); ");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil";
