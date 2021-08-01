@@ -2,13 +2,13 @@
 include '../koneksi.php';
 if (isset($_POST['id_datainfak'])) {
 
-    $kodkatgrinfak = $_POST['id_datainfak'];
-    $namakatgrinfak = $_POST['tanggal_datainfak'];
-    $namakatgrinfak = $_POST['idkatgr_datainfak'];
-    $namakatgrinfak = $_POST['jumlah_datainfak'];
+    $id_datainfak = $_POST['id_datainfak'];
+    $tanggal_datainfak = $_POST['tanggal_datainfak'];
+    $idkatgr_datainfak = $_POST['idkatgr_datainfak'];
+    $jumlah_datainfak = $_POST['jumlah_datainfak'];
 
-    $query = mysqli_query($conn, " INSERT INTO `tb_infak` (`kodkatgr_infak`, `namakatgr_infak`) 
-    VALUES ('$kodkatgrinfak', '$namakatgrinfak'); ");
+    $query = mysqli_query($conn, " INSERT INTO `tb_infak` 
+    VALUES ('$id_datainfak', '$tanggal_datainfak','$idkatgr_datainfak','$jumlah_datainfak'); ");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil";
