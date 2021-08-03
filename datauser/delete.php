@@ -2,7 +2,7 @@
 include '../koneksi.php';
 if (isset($_POST['kode_user'])) {
     $kodeuser = $_POST['kode_user'];
-    $query = mysqli_query($conn, "DELETE FROM tb_user WHERE kode_user = 'Usr01';");
+    $query = mysqli_query($conn, "DELETE FROM tb_user WHERE kode_user = '$kodeuser';");
     if (!$query) {
         $data['pesan'] = "Query atau data user yang dikirm  salah";
         $data['data'] = $_POST['kode_user'];
