@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 if (isset($_POST['kode_user'])) {
     $kodeuser = $_POST['kode_user'];
     $query = mysqli_query($conn, "DELETE FROM tb_user WHERE kode_user = 'Usr01';");
