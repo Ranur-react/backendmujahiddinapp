@@ -1,6 +1,6 @@
 <?php
 include '../koneksi.php';
-$query = mysqli_query($conn, " SELECT * FROM tb_datakegiatan;");
+$query = mysqli_query($conn, "SELECT * FROM tb_datakegiatan join `tb_kegiatan` on kode_kegiatan=kode_datakegiatan;");
 
 if ($query) {
     $database = [];
