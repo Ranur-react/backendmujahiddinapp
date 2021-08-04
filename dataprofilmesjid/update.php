@@ -13,7 +13,7 @@ if (isset($_POST['notelp_informasi'])) {
     if ($query) {
         $data['pesan'] = "Data anda tidak valid";
         $data['status'] = false;
-        $data=['data']=$_POST;
+        $data['data']=$_POST;
     } else {
         $data['pesan'] = "Data Anda Berhail Update";
         $data['status'] = true;
