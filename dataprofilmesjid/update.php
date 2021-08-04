@@ -8,7 +8,7 @@ if (isset($_POST['notelp_informasi'])) {
     $bank_rekening = $_POST['bank_rekening'];
     $id_penanggungjwb = $_POST['id_penanggungjwb'];
 
-    $query = mysqli_query($conn, " UPDATE tb_informasi SET  norek_informasi= '$norek_informasi', notelp_informasi= '$notelp_informasi', anrek_informasi= '$anrek_informasi',   bank_rekening= '$bank_rekening',id_penanggungjwb= '$id_penanggungjwb' ;");
+    $query = mysqli_query($conn, " UPDATE tb_informasi SET  norek_informasi= '$norek_informasi', notelp_informasi= '$notelp_informasi', anrek_informasi= '$anrek_informasi',   bank_rekening= '$bank_rekening',id_penanggungjwb= '$id_penanggungjwb' WHERE no=1;");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhail Update";
