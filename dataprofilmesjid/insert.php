@@ -8,7 +8,7 @@ if (isset($_POST['notelp_informasi'])) {
     $bank_rekening = $_POST['bank_rekening'];
     $id_penanggungjwb = $_POST['id_penanggungjwb'];
 
-    $query = mysqli_query($conn, " INSERT INTO `tb_profilmesjid` 
+    $query = mysqli_query($conn, " INSERT INTO `tb_informasi` 
      VALUES ('$notelp_informasi', '$norek_informasi', '$bank_rekening', '$id_penanggungjwb','$anrek_informasi'); ");
 
     if ($query) {
