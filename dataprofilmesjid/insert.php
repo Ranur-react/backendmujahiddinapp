@@ -1,14 +1,15 @@
 <?php
 include '../koneksi.php';
-if (isset($_POST['notelpn_profilm'])) {
+if (isset($_POST['notelp_informasi'])) {
 // $data['lihatdatayangdikirm']=$_POST;
-    $notelpnprofilm = $_POST['notelpn_profilm'];
-    $namabnkprofilm = $_POST['namabnk_profilm'];
-    $norekprofilm = $_POST['norek_profilm'];
-    $idpenjawabprofilm = $_POST['idpenjawab_profilm'];
+    $notelp_informasi = $_POST['notelp_informasi'];
+    $norek_informasi = $_POST['norek_informasi'];
+    $anrek_informasi = $_POST['anrek_informasi'];
+    $bank_rekening = $_POST['bank_rekening'];
+    $id_penanggungjwb = $_POST['id_penanggungjwb'];
 
-    $query = mysqli_query($conn, " INSERT INTO `db_mujahiddin`.`tb_profilmesjid` (`notelpn_profilm`, `namabnk_profilm`, `norek_profilm`, `idpenjawab_profilm`)
-     VALUES ('$notelpnprofilm', '$namabnkprofilm', '$norekprofilm', '$idpenjawabprofilm'); ");
+    $query = mysqli_query($conn, " INSERT INTO `tb_profilmesjid` 
+     VALUES ('$notelp_informasi', '$norek_informasi', '$bank_rekening', '$id_penanggungjwb','$anrek_informasi'); ");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil";
