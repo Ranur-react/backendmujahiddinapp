@@ -9,7 +9,7 @@ if (isset($_POST['kodkatgr_infak'])) {
         $data['pesan'] = "Data Anda Berhasil Dihapus";
         $data['status'] = true;
     } else {
-        $data['pesan'] = "ID Data anda tidak valid";
+        $data['pesan'] = "ID Data anda tidak valid Atau sudah digunakan Pada data lain";
         $data['status'] = false;
         $data['data'] = $_POST;
     }
