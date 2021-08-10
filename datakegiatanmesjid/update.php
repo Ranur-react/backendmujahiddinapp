@@ -8,7 +8,7 @@ if (isset($_POST['no_datakegtn'])) {
         $d = $_POST['waktu_kegiatan'];
         $e = $_POST['idpematerikegiatan'];
 
-    $query = mysqli_query($conn, "UPDATE tb_datakegiatan SET  kode_datakegiatan= '$b', hari_kegiatan= '$c', waktu_kegiatan= '$d',   idpematerikegiatan= '$e' WHERE no_datakegtn= '$a';");
+    $query = mysqli_query($conn, "UPDATE tb_datakegiatan SET  kode_datakegiatan= '$b', hari_datakegiatan= '$c', waktu_datakegiatan= '$d',id_datapemateri= '$e' WHERE no_datakegtn= '$a';");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhail Update";
