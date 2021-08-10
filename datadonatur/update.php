@@ -8,7 +8,7 @@ if (isset($_POST['kode_datadonatur'])) {
     $d = $_POST['nohp_donatur'];
 
 
-    $query = mysqli_query($conn, "UPDATE tb_datadonatur SET  nama_datadonatur= '$b', alamat_donatur= '$c', nohp_donatur= '$d',   WHERE kode_datadonatur= '$a';");
+    $query = mysqli_query($conn, "UPDATE tb_datadonatur SET  nama_datadonatur= '$b', alamat_donatur= '$c', nohp_donatur= '$d'   WHERE kode_datadonatur= '$a';");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhail Update";
