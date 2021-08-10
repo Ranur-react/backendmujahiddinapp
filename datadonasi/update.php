@@ -12,12 +12,12 @@ if (isset($_POST['iddon_penerima'])) {
     $query = mysqli_query($conn, "UPDATE tb_penerimaan SET  tanggal_penerima= '$b', id_penerima= '$c', id_jenispenerima= '$d',   jumlah_donasi= '$e' WHERE iddon_penerima= '$a';");
 
     if ($query) {
-        $data['pesan'] = "Data anda tidak valid";
-        $data['data'] =$_POST;
-        $data['status'] = false;
-    } else {
         $data['pesan'] = "Data Anda Berhail Update";
         $data['status'] = true;
+    } else {
+        $data['data'] =$_POST;
+        $data['pesan'] = "Data anda tidak valid";
+        $data['status'] = false;
     }
 } else {
     $data['pesan'] = "Data Tidak Dapat Diakses";
