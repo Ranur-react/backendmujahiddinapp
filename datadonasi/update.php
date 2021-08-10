@@ -9,7 +9,7 @@ if (isset($_POST['iddon_penerima'])) {
     $e = $_POST['jumlah_donasi'];
 
 
-    $query = mysqli_query($conn, " UPDATE tb_penerimaan SET  tanggal_penerima= '$b', id_penerima= '$c', id_jenispenerima= '$d',   jumlah_donasi= '$e' WHERE iddon_penerima= '$a';");
+    $query = mysqli_query($conn, "UPDATE tb_penerimaan SET  tanggal_penerima= '$b', id_penerima= '$c', id_jenispenerima= '$d',   jumlah_donasi= '$e' WHERE iddon_penerima= '$a';");
 
     if ($query) {
         $data['pesan'] = "Data anda tidak valid";
