@@ -13,6 +13,7 @@ if (isset($_POST['iddon_penerima'])) {
 
     if ($query) {
         $data['pesan'] = "Data anda tidak valid";
+        $data['data'] =$_POST;
         $data['status'] = false;
     } else {
         $data['pesan'] = "Data Anda Berhail Update";
