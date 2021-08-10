@@ -17,4 +17,5 @@ if ($query) {
     $data['status'] = false;
 }
 echo json_encode($data);
+
 ?>
