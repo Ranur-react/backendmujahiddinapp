@@ -5,7 +5,7 @@ if (isset($_POST['kode_pemateri'])) {
     $nama_pemateri = $_POST['nama_pemateri'];
 
    
-    $query = mysqli_query($conn, "UPDATE tb_penerimaan SET  nama_pemateri='$nama_pemateri' WHERE kode_pemateri= '$kode_pemateri';");
+    $query = mysqli_query($conn, "UPDATE tb_pemateri SET nama_pemateri='$nama_pemateri' WHERE kode_pemateri= '$kode_pemateri';");
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil Update";
         $data['status'] = true;
