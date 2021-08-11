@@ -1,7 +1,7 @@
 <?php
 include '../koneksi.php';
 $queryAlll = mysqli_query($conn, " SELECT * FROM tb_donasimasuk;");
-$query = mysqli_query($conn, " SELECT tanggal_donmasuk as tgl,jumlah_donmasuk as jumlah FROM tb_donasimasuk;");
+$query = mysqli_query($conn, " SELECT id_uangmasuk,tanggal_donmasuk as tgl,jumlah_donmasuk  as jumlah,tanggal_donmasuk,iddon_donmasuk,jumlah_donmasuk,ket_donmasuk,jumlah_donmasuk FROM tb_donasimasuk;");
 
 if ($query) {
     $database = [];
