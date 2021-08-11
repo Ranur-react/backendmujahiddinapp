@@ -20,6 +20,9 @@ if ($query) {
         while ($d = mysqli_fetch_array($queryInfoInfakBulanIni)) {
             $database[] = $d;
         }
+        $data['bulan'] = $bulan;
+        $data['tahun'] = $tahun;
+        $data['hari'] = $hariini;
         $data['dataBulanINi'] = $database;
     
         $data['pesan'] = "";
