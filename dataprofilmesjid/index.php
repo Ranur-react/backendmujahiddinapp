@@ -5,6 +5,7 @@ $tahun=date('Y');
 $bulan=date('m');
 $hariini=date('Y-m-d');
 $queryInfoInfakBulanIni = mysqli_query($conn, "SELECT tanggal_datainfak,SUM(jumlah_datainfak) as infakBulanIni FROM tb_datainfak WHERE YEAR(tanggal_datainfak) = '$tahun' AND MONTH(tanggal_datainfak) = '$bulan'; ");
+$queryInfoInfakHariIni = mysqli_query($conn, "SELECT tanggal_datainfak,SUM(jumlah_datainfak) as infakBulanIni FROM tb_datainfak WHERE  tanggal_datainfak = '$hariini'");
 
 if ($query) {
     $database = [];
@@ -22,15 +23,29 @@ if ($query) {
         }
         $data['bulan'] = $bulan;
         $data['tahun'] = $tahun;
-        $data['hari'] = $hariini;
-        $data['dataBulanINi'] = $database;
+        $data['databulanini'] = $database;
     
         $data['pesan'] = "";
         $data['status'] = true;
+        if ($queryInfoInfakHariIni) {
+            $database = [];
+            while ($d = mysqli_fetch_array($queryInfoInfakHariIni)) {
+                $database[] = $d;
+            }
+            $data['hari'] = $hariini;
+            $data['hariini'] = $database;
+        
+            $data['pesan'] = "";
+            $data['status'] = true;
+            
+        }else{
+            $data['hari'] = $hariini;
+            $data['pesan'] = "Data gagal diambil dari database Infak Hari  Ini";
+            $data['status'] = false;
+        }
     }else{
         $data['bulan'] = $bulan;
         $data['tahun'] = $tahun;
-        $data['hari'] = $hariini;
         $data['pesan'] = "Data gagal diambil dari database Infak Bulan Ini";
         $data['status'] = false;
     }
