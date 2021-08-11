@@ -7,7 +7,7 @@ if (isset($_POST['id_dataspenerima'])) {
     $c = $_POST['alamat_penerima'];
     $d = $_POST['nohp_penerima'];
 
-    $query = mysqli_query($conn, "UPDATE tb_datapenerima SET  nama_penerima= '$b', alamat_penerima= '$c', nohp_penerima= '$d',WHERE id_dataspenerima= '$a';");
+    $query = mysqli_query($conn, "UPDATE tb_datapenerima SET  nama_penerima= '$b', alamat_penerima= '$c', nohp_penerima= '$d' WHERE id_dataspenerima= '$a';");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhail Update";
