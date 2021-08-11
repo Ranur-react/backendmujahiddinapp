@@ -1,9 +1,8 @@
 <?php
 include '../koneksi.php';
-if (isset($_POST['id_dataspenerima'])) {
-    $kode_datadonatur = $_POST['id_dataspenerima'];
-
-    $query = mysqli_query($conn, " DELETE FROM `tb_datapenerima` WHERE `id_dataspenerima`='$kode_datadonatur'");
+if (isset($_POST['key'])) {
+    $k = $_POST['key'];
+    $query = mysqli_query($conn, " DELETE FROM `tb_datapenerima` WHERE `id_dataspenerima`='$k'");
 
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil Dihapus";
