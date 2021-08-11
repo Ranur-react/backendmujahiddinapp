@@ -1,9 +1,9 @@
 <?php
 include '../koneksi.php';
 $query = mysqli_query($conn, " SELECT * FROM tb_informasi;");
-$tahun=date('YY');
-$bulan=date('mm');
-$hariini=date('YY-mm-dd');
+$tahun=date('Y');
+$bulan=date('m');
+$hariini=date('Y-m-d');
 $queryInfoInfakBulanIni = mysqli_query($conn, "SELECT tanggal_datainfak,SUM(jumlah_datainfak) as infakBulanIni FROM tb_datainfak WHERE YEAR(tanggal_datainfak) = '$tahun' AND MONTH(tanggal_datainfak) = '$bulan'; ");
 
 if ($query) {
