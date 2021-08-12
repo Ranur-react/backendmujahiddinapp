@@ -18,7 +18,7 @@
 
         #customers td,
         #customers th {
-            border: 1px solid #ddd;
+            border: 1px solid black;
             padding: 8px;
         }
        .center {
