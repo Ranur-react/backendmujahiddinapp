@@ -19,24 +19,18 @@ foreach ($d = mysqli_fetch_array($query) as $d) :
                 <td rowspan="2">Kode kegiatan</td>
                 <td rowspan="2">Nama kegiatan</td>
                 <td colspan="7">Hari</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+        
                 <td rowspan="2">Waktu</td>
                 <td rowspan="2">Nama Pemateri</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <td>Senin</td>
+                <td>Selasa</td>
+                <td>Rabu</td>
+                <td>Kamis</td>
+                <td>Jum'at</td>
+                <td>Sabtu</td>
+                <td>Minggu</td>
             </tr>
         </table>
     </body>
