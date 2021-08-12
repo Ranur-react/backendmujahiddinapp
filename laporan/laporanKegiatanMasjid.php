@@ -49,19 +49,19 @@
             <tr>
                 <th rowspan="2">Kode kegiatan</th>
                 <th rowspan="2">Nama kegiatan</th>
-                <th colspan="7" class="center" >Hari</th>
+                <th colspan="7" style="text-align: center;">Hari</th>
 
                 <th rowspan="2">Waktu</th>
                 <th rowspan="2">Nama Pemateri</th>
             </tr>
             <tr>
-                <th class="center" >Senin</th>
-                <th class="center">Selasa</th>
-                <th class="center">Rabu</th>
-                <th class="center">Kamis</th>
-                <th class="center">Jum'at</th>
-                <th class="center">Sabtu</th>
-                <th class="center">Minggu</th>
+                <th style="text-align: center;" >Senin</th>
+                <th style="text-align: center;">Selasa</th>
+                <th style="text-align: center;">Rabu</th>
+                <th style="text-align: center;">Kamis</th>
+                <th style="text-align: center;">Jum'at</th>
+                <th style="text-align: center;">Sabtu</th>
+                <th style="text-align: center;">Minggu</th>
             </tr>
         </thead>
         <tbody>
@@ -71,17 +71,17 @@
             while ($data = mysqli_fetch_array($query)) {
             ?>
                 <tr>
-                    <td><?php echo $data['no_datakegtn']; ?></td>
-                    <td><?php echo $data['nama_kegiatan']; ?></td>
-                    <td><?= $data['hari_datakegiatan'] == 1 ? 'V' : ''; ?></td>
-                    <td><?= $data['hari_datakegiatan'] == 2 ? 'V' : ''; ?></td>
-                    <td><?= $data['hari_datakegiatan'] == 3 ? 'V' : ''; ?></td>
-                    <td><?= $data['hari_datakegiatan'] == 4 ? 'V' : ''; ?></td>
-                    <td><?= $data['hari_datakegiatan'] == 5 ? 'V' : ''; ?></td>
-                    <td><?= $data['hari_datakegiatan'] == 6 ? 'V' : ''; ?></td>
-                    <td><?= $data['hari_datakegiatan'] == 7 ? 'V' : ''; ?></td>
-                    <td><?= $data['waktu_datakegiatan']; ?></td>
-                    <td><?= $data['nama_pemateri']; ?></td>
+                    <td style="text-align: center;"><?php echo $data['no_datakegtn']; ?></td>
+                    <td style="text-align: center;"><?php echo $data['nama_kegiatan']; ?></td>
+                    <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 1 ? 'V' : ''; ?></td>
+                    <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 2 ? 'V' : ''; ?></td>
+                    <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 3 ? 'V' : ''; ?></td>
+                    <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 4 ? 'V' : ''; ?></td>
+                    <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 5 ? 'V' : ''; ?></td>
+                    <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 6 ? 'V' : ''; ?></td>
+                    <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 7 ? 'V' : ''; ?></td>
+                    <td style="text-align: center;"><?= $data['waktu_datakegiatan']; ?></td>
+                    <td style="text-align: center;"><?= $data['nama_pemateri']; ?></td>
                 </tr>
             <?php
             }
