@@ -38,21 +38,7 @@ include '../koneksi.php';
                 }
             while ($data = mysqli_fetch_array($query)) {
                  
-                $html+='
-                <tr>
-                <td style="text-align: center;">'.$data["no_datakegtn"].'</td>
-                <td >'.$data['nama_kegiatan'].'</td>
-                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],1).'</td>
-                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],2).'</td>
-                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],3).'</td>
-                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],4).'</td>
-                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],5).'</td>
-                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],6).'</td>
-                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],7).'</td>
-                <td style="text-align: center;">'.$data['waktu_datakegiatan'].'</td>
-                <td >'.$data['nama_pemateri'].'</td>
-            </tr>
-                ';
+         
             }
 $html+='
         <tbody>
