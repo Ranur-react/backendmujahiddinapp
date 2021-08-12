@@ -19,7 +19,12 @@ $html='
         include '../koneksi.php';
         $query = mysqli_query($conn, "SELECT id_datainfak,CONCAT(namakatgr_infak,'~(',tanggal_datainfak,')') as info, jumlah_datainfak,idkatgr_datainfak,tanggal_datainfak,jumlah_datainfak,namakatgr_infak FROM tb_datainfak join tb_infak on kodkatgr_infak=idkatgr_datainfak;");
 
-
+        function rupiah($angka){
+	
+            $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+            return $hasil_rupiah;
+         
+        }
         while ($data = mysqli_fetch_array($query)) {
             $html.='
                 <tr>
@@ -27,7 +32,7 @@ $html='
                 <td style="text-align: left;">'.$data["tanggal_datainfak"].'</td>
                 <td style="text-align: center;">'.$data["idkatgr_datainfak"].'</td>
                 <td style="text-align: left;">'.$data["namakatgr_infak"].'</td>
-                <td style="text-align: left;">'.$data["jumlah_datainfak"].'</td>
+                <td style="text-align: left;">'.rupiah($data["jumlah_datainfak"]).'</td>
             </tr>
                 ';
 

@@ -20,7 +20,12 @@ $html='
         include '../koneksi.php';
         $query = mysqli_query($conn, " SELECT id_uangmasuk,tanggal_donmasuk as tgl,jumlah_donmasuk  as jumlah,tanggal_donmasuk,iddon_donmasuk,jumlah_donmasuk,ket_donmasuk,jumlah_donmasuk,nama_datadonatur FROM tb_donasimasuk join tb_datadonatur on kode_datadonatur=iddon_donmasuk;");
 
-
+        function rupiah($angka){
+	
+            $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+            return $hasil_rupiah;
+         
+        }
         while ($data = mysqli_fetch_array($query)) {
             $html.='
                 <tr>
@@ -28,7 +33,7 @@ $html='
                 <td style="text-align: left;">'.$data["tanggal_donmasuk"].'</td>
                 <td style="text-align: center;">'.$data["iddon_donmasuk"].'</td>
                 <td style="text-align: left;">'.$data["nama_datadonatur"].'</td>
-                <td style="text-align: left;">'.$data["jumlah_donmasuk"].'</td>
+                <td style="text-align: left;">'.rupiah($data["jumlah_donmasuk"]).'</td>
                 <td style="text-align: left;">'.$data["ket_donmasuk"].'</td>
             </tr>
                 ';
