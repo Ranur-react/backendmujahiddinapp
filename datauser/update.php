@@ -11,11 +11,11 @@ if (isset($_POST['kode_user'])) {
     $query = mysqli_query($conn, " UPDATE tb_mujahiddin SET  nama_user= '$namauser', username_user= '$usernameuser', password_user= '$passworduser',   level_user= '$leveluser' WHERE kode_user= '$kodeuser';");
 
     if ($query) {
+        $data['pesan'] = "Data Anda Berhasil";
+        $data['status'] = true;
+    } else {
         $data['pesan'] = "Data anda tidak valid";
         $data['status'] = false;
-    } else {
-        $data['pesan'] = "Data Anda Berhail";
-        $data['status'] = true;
     }
 } else {
     $data['pesan'] = "Data Tidak Dapat Diakses";
