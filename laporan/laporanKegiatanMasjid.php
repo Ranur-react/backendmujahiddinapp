@@ -37,7 +37,7 @@
             ?>
                 <td><?php echo $data['no_datakegtn']; ?></td>
                 <td><?php echo $data['nama_kegiatan']; ?></td>
-                <td><?= $data['hari_datakegiatan']; ?></td>
+                <td><?php echo $data['hari_datakegiatan']; ?></td>
                 <td><?php echo $data['no_datakegtn']; ?></td>
                 <td><?php echo $data['no_datakegtn']; ?></td>
                 <td><?php echo $data['no_datakegtn']; ?></td>
