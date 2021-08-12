@@ -33,7 +33,7 @@ if ($query) {
                 $database[] = $d;
             }
             $data['hari'] = $hariini;
-            $data['hariini'] = $database;
+            $data['datahariini'] = $database;
         
             $data['pesan'] = "";
             $data['status'] = true;
