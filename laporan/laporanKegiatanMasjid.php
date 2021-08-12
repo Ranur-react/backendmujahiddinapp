@@ -49,7 +49,7 @@
             <tr>
                 <th rowspan="2">Kode kegiatan</th>
                 <th rowspan="2">Nama kegiatan</th>
-                <th colspan="7" style="text-align: center;">Hari</th>
+                <th colspan="7" class="center" >Hari</th>
 
                 <th rowspan="2">Waktu</th>
                 <th rowspan="2">Nama Pemateri</th>
