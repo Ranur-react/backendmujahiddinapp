@@ -28,6 +28,7 @@ $html='
                 <td style="text-align: left;">'.$data["tanggal_donmasuk"].'</td>
                 <td style="text-align: center;">'.$data["iddon_donmasuk"].'</td>
                 <td style="text-align: left;">'.$data["nama_datadonatur"].'</td>
+                <td style="text-align: left;">'.$data["jumlah_donmasuk"].'</td>
                 <td style="text-align: left;">'.$data["ket_donmasuk"].'</td>
             </tr>
                 ';
