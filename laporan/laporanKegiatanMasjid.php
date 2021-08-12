@@ -21,7 +21,7 @@
             border: 1px solid #ddd;
             padding: 8px;
         }
-        #customers th .center {
+       .center {
             text-align: 'center';
             align-items: 'center';
             justify-content: 'center';
@@ -51,7 +51,7 @@
             <tr>
                 <th rowspan="2">Kode kegiatan</th>
                 <th rowspan="2">Nama kegiatan</th>
-                <th colspan="7">Hari</th>
+                <th colspan="7" class="center">Hari</th>
 
                 <th rowspan="2">Waktu</th>
                 <th rowspan="2">Nama Pemateri</th>
