@@ -32,7 +32,7 @@ $html='
                 <td style="text-align: center;">'.$data["id_keluar"].'</td>
                 <td style="text-align: left;">'.$data["tanggal_keluar"].'</td>
                 <td style="text-align: center;">'.$data["uraian_keluar"].'</td>
-                <td style="text-align: left;">'.$data["jumlah_keluar"].'</td>
+                <td style="text-align: left;">'.rupiah($data["jumlah_keluar"]).'</td>
             </tr>
                 ';
 
