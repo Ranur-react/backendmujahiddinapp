@@ -1,6 +1,6 @@
 <?php
 include '../koneksi.php';
-$query = mysqli_query($conn, " SELECT * FROM tb_informasi;");
+$query = mysqli_query($conn, "SELECT * FROM tb_informasi;");
 $tahun=date('Y');
 $bulan=date('m');
 $hariini=date('Y-m-d');
