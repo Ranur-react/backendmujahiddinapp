@@ -16,7 +16,9 @@ foreach ($d = mysqli_fetch_array($query) as $d) :
     <body>
         <table border="1">
             <tr>
-                <td rowspan="2">X</td>
+                <td rowspan="2">Kode kegiatan</td>
+                <td rowspan="2">Nama kegiatan</td>
+                <td colspan="7">Hari</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -24,17 +26,10 @@ foreach ($d = mysqli_fetch_array($query) as $d) :
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td rowspan="2">Waktu</td>
+                <td rowspan="2">Nama Pemateri</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
