@@ -38,11 +38,15 @@
             <tr>
                 <td><?php echo $data['no_datakegtn']; ?></td>
                 <td><?php echo $data['nama_kegiatan']; ?></td>
-                <td><?php  if($data['hari_datakegiatan']==1) echo 'Senin';  ?></td>
+                <td><?= $data['hari_datakegiatan']==1 ? 'Senin':''; ?><</td>
                 <td><?= $data['hari_datakegiatan']==2 ? 'Selasa':''; ?></td>
-                <td><?php echo $data['hari_datakegiatan']; ?></td>
-                <td><?php echo $data['hari_datakegiatan']; ?></td>
-                <td><?php echo $data['hari_datakegiatan']; ?></td>
+                <td><?= $data['hari_datakegiatan']==3 ? 'Rabu':''; ?><</td>
+                <td><?= $data['hari_datakegiatan']==4 ? 'Kamis':''; ?><</td>
+                <td><?= $data['hari_datakegiatan']==5 ? 'Jumat':''; ?><</td>
+                <td><?= $data['hari_datakegiatan']==6 ? 'Sabtu':''; ?><</td>
+                <td><?= $data['hari_datakegiatan']==7 ? 'Minggu':''; ?><</td>
+                <td><?= $data['waktu_datakegiatan']; ?><</td>
+                <td><?= $data['nama_pemateri']; ?><</td>
                 </tr>
             <?php
             }
