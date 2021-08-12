@@ -38,7 +38,7 @@
             <tr>
                 <td><?php echo $data['no_datakegtn']; ?></td>
                 <td><?php echo $data['nama_kegiatan']; ?></td>
-                <td><?= $data['hari_datakegiatan']; ?></td>
+                <td><? echo $data['hari_datakegiatan']==1? 'Senin':''; ?></td>
                 <td><?php echo $data['hari_datakegiatan']; ?></td>
                 <td><?php echo $data['hari_datakegiatan']; ?></td>
                 <td><?php echo $data['hari_datakegiatan']; ?></td>
