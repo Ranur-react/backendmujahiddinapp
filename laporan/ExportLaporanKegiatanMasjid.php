@@ -26,11 +26,7 @@ $html='
         </thead>
         <tbody>
         </tbody>
-';
-
-$html+='
-
-        </table>
+</table>
     </body>
     
     </html>
