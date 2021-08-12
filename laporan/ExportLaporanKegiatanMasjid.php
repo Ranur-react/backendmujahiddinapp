@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
 $html='
-
+<link rel="stylesheet" href="css/prints.css">
 <table id="customers" align="center" border="1">
         <thead>
             <tr>
