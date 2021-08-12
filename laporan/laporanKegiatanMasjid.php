@@ -39,7 +39,7 @@
                 <td><?php echo $data['no_datakegtn']; ?></td>
                 <td><?php echo $data['nama_kegiatan']; ?></td>
                 <td><?php  if($data['hari_datakegiatan']==1) echo 'Senin';  ?></td>
-                <td><?php echo $data['hari_datakegiatan']; ?></td>
+                <td><?= $data['hari_datakegiatan']==2 ? 'Selasa':''; ?></td>
                 <td><?php echo $data['hari_datakegiatan']; ?></td>
                 <td><?php echo $data['hari_datakegiatan']; ?></td>
                 <td><?php echo $data['hari_datakegiatan']; ?></td>
