@@ -1,6 +1,6 @@
 <?php
 include '../koneksi.php';
-$query = mysqli_query($conn, "SELECT nama_level,nama_user,kode_user,username_user,password_user,level_user FROM tb_user join tb_level on id=level_user;");
+$query = mysqli_query($conn, "SELECT kode_user,nama_level,nama_user,username_user,password_user,level_user FROM tb_user join tb_level on id=level_user;");
 
 if ($query) {
     $database = [];
