@@ -33,7 +33,7 @@
             <?php
             include '../koneksi.php';
             $query = mysqli_query($conn, "SELECT no_datakegtn,concat(`hari`,'-',waktu_datakegiatan) as infowaktu,nama_kegiatan,`waktu_datakegiatan`, hari_datakegiatan, kode_datakegiatan,id_datapemateri,nama_pemateri FROM tb_datakegiatan join `tb_kegiatan` on kode_kegiatan=kode_datakegiatan join tb_hari on hari_datakegiatan=id join tb_pemateri on kode_pemateri=id_datapemateri;");
-            foreach ($d = mysqli_fetch_array($query) as $data) :
+            while ($data = mysqli_fetch_array($query) ) {
             ?>
             <tr>
                 <td><?php echo $data['no_datakegtn']; ?></td>
@@ -45,7 +45,7 @@
                 <td><?php echo $data['no_datakegtn']; ?></td>
                 </tr>
             <?php
-            endforeach;
+            }
             ?>
         </tbody>
 
