@@ -38,15 +38,15 @@
             <tr>
                 <td><?php echo $data['no_datakegtn']; ?></td>
                 <td><?php echo $data['nama_kegiatan']; ?></td>
-                <td><?= $data['hari_datakegiatan']==1 ? 'Senin':''; ?><</td>
-                <td><?= $data['hari_datakegiatan']==2 ? 'Selasa':''; ?></td>
-                <td><?= $data['hari_datakegiatan']==3 ? 'Rabu':''; ?><</td>
-                <td><?= $data['hari_datakegiatan']==4 ? 'Kamis':''; ?><</td>
-                <td><?= $data['hari_datakegiatan']==5 ? 'Jumat':''; ?><</td>
-                <td><?= $data['hari_datakegiatan']==6 ? 'Sabtu':''; ?><</td>
-                <td><?= $data['hari_datakegiatan']==7 ? 'Minggu':''; ?><</td>
-                <td><?= $data['waktu_datakegiatan']; ?><</td>
-                <td><?= $data['nama_pemateri']; ?><</td>
+                <td><?= $data['hari_datakegiatan']==1 ? 'V':''; ?></td>
+                <td><?= $data['hari_datakegiatan']==2 ? 'V':''; ?></td>
+                <td><?= $data['hari_datakegiatan']==3 ? 'V':''; ?></td>
+                <td><?= $data['hari_datakegiatan']==4 ? 'V':''; ?></td>
+                <td><?= $data['hari_datakegiatan']==5 ? 'V':''; ?></td>
+                <td><?= $data['hari_datakegiatan']==6 ? 'V':''; ?></td>
+                <td><?= $data['hari_datakegiatan']==7 ? 'V':''; ?></td>
+                <td><?= $data['waktu_datakegiatan']; ?></td>
+                <td><?= $data['nama_pemateri']; ?></td>
                 </tr>
             <?php
             }
