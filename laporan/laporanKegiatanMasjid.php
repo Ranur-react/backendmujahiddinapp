@@ -23,8 +23,6 @@
         }
        .center {
             text-align: 'center';
-            align-items: 'center';
-            justify-content: 'center';
         }
 
         #customers tr:nth-child(even) {
