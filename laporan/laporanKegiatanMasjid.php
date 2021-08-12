@@ -14,7 +14,7 @@ foreach ($d = mysqli_fetch_array($query) as $d) :
     </head>
 
     <body>
-        <table>
+        <table border="1">
             <tr>
                 <td rowspan="2">X</td>
                 <td></td>
