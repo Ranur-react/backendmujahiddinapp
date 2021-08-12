@@ -24,8 +24,8 @@ $html='
                 <th style="text-align: center;">Minggu</th>
             </tr>
         </thead>
-        <tbody>
-        </tbody>
+        <tbody>';
+        $html+='</tbody>
         <tbody>
         </tbody>
 </table>
