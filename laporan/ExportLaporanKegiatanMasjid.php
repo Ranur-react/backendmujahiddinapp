@@ -53,17 +53,18 @@ $html='
 
         }
         $html.='
-      TTD
-
-
-      <br>
-      <br>
-      <br>
-        Ketua Umum Masjid MUjahidin
+    
         </tbody>
         <tbody>
         </tbody>
 </table>
+TTD
+
+
+<br>
+<br>
+<br>
+  Ketua Umum Masjid MUjahidin
     </body>
     </html>
 
