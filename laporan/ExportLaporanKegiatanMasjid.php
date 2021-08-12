@@ -27,7 +27,31 @@ $html='
         <tbody>';
         include '../koneksi.php';
         $query = mysqli_query($conn, "SELECT no_datakegtn,concat(`hari`,'-',waktu_datakegiatan) as infowaktu,nama_kegiatan,`waktu_datakegiatan`, hari_datakegiatan, kode_datakegiatan,id_datapemateri,nama_pemateri FROM tb_datakegiatan join `tb_kegiatan` on kode_kegiatan=kode_datakegiatan join tb_hari on hari_datakegiatan=id join tb_pemateri on kode_pemateri=id_datapemateri;");
-        while ($data = mysqli_fetch_array($query)) {}
+        function hariceklis($d,$var)
+        {
+            if($d == $var){
+                return 'V';
+            }
+            
+        }
+        while ($data = mysqli_fetch_array($query)) {
+            $html.='
+                <tr>
+                <td style="text-align: center;">'.$data["no_datakegtn"].'</td>
+                <td >'.$data['nama_kegiatan'].'</td>
+                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],1).'</td>
+                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],2).'</td>
+                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],3).'</td>
+                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],4).'</td>
+                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],5).'</td>
+                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],6).'</td>
+                <td style="text-align: center;">'.hariceklis($data['hari_datakegiatan'],7).'</td>
+                <td style="text-align: center;">'.$data['waktu_datakegiatan'].'</td>
+                <td >'.$data['nama_pemateri'].'</td>
+            </tr>
+                ';
+
+        }
         $html.='</tbody>
         <tbody>
         </tbody>
