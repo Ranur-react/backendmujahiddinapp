@@ -36,10 +36,10 @@ include '../koneksi.php';
                     }
                     
                 }
-            while ($data = mysqli_fetch_array($query)) {
+            // while ($data = mysqli_fetch_array($query)) {
                  
          
-            }
+            // }
 $html+='
         <tbody>
         </table>
