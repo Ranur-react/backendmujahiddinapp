@@ -18,7 +18,7 @@
 
         #customers td,
         #customers th {
-            border: 1px solid black;
+            border: 1px solid #ddd;
             padding: 8px;
         }
        .center {
@@ -47,12 +47,12 @@
     <table id="customers" align="center" border="1">
         <thead>
             <tr>
-                <th rowspan="2">Kode kegiatan</th>
-                <th rowspan="2">Nama kegiatan</th>
+                <th style="text-align: center;" rowspan="2">Kode kegiatan</th>
+                <th style="text-align: center;" rowspan="2">Nama kegiatan</th>
                 <th colspan="7" style="text-align: center;">Hari</th>
 
-                <th rowspan="2">Waktu</th>
-                <th rowspan="2">Nama Pemateri</th>
+                <th style="text-align: center;" rowspan="2">Waktu</th>
+                <th style="text-align: center;" rowspan="2">Nama Pemateri</th>
             </tr>
             <tr>
                 <th style="text-align: center;" >Senin</th>
@@ -72,7 +72,7 @@
             ?>
                 <tr>
                     <td style="text-align: center;"><?php echo $data['no_datakegtn']; ?></td>
-                    <td style="text-align: center;"><?php echo $data['nama_kegiatan']; ?></td>
+                    <td ><?php echo $data['nama_kegiatan']; ?></td>
                     <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 1 ? 'V' : ''; ?></td>
                     <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 2 ? 'V' : ''; ?></td>
                     <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 3 ? 'V' : ''; ?></td>
@@ -81,7 +81,7 @@
                     <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 6 ? 'V' : ''; ?></td>
                     <td style="text-align: center;"><?= $data['hari_datakegiatan'] == 7 ? 'V' : ''; ?></td>
                     <td style="text-align: center;"><?= $data['waktu_datakegiatan']; ?></td>
-                    <td style="text-align: center;"><?= $data['nama_pemateri']; ?></td>
+                    <td ><?= $data['nama_pemateri']; ?></td>
                 </tr>
             <?php
             }
