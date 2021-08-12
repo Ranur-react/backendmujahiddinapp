@@ -64,7 +64,7 @@ TTD
 <br>
 <br>
 <br>
-  Ketua Umum Masjid MUjahidin
+  Ketua Umum
     </body>
     </html>
 
