@@ -5,7 +5,7 @@ $tahun=date('Y');
 $bulan=date('m');
 $hariini=date('Y-m-d');
 $queryInfoInfakBulanIni = mysqli_query($conn, "SELECT tanggal_datainfak,SUM(jumlah_datainfak) as infakBulanIni FROM tb_datainfak WHERE YEAR(tanggal_datainfak) = '$tahun' AND MONTH(tanggal_datainfak) = '$bulan'; ");
-$queryInfoInfakHariIni = mysqli_query($conn, "SELECT tanggal_datainfak,SUM(jumlah_datainfak) as infakBulanIni FROM tb_datainfak WHERE  tanggal_datainfak = '$hariini'");
+$queryInfoInfakHariIni = mysqli_query($conn, "SELECT tanggal_datainfak,SUM(jumlah_datainfak) as InfakHariIni FROM tb_datainfak WHERE tanggal_datainfak = '$hariini';");
 
 if ($query) {
     $database = [];
