@@ -25,12 +25,11 @@ $html='
             </tr>
         </thead>
         <tbody>';
-        $html+='</tbody>
+        $html.='</tbody>
         <tbody>
         </tbody>
 </table>
     </body>
-    
     </html>
 
 ';
