@@ -26,6 +26,8 @@ $html='
         </thead>
         <tbody>
         </tbody>
+        <tbody>
+        </tbody>
 </table>
     </body>
     
