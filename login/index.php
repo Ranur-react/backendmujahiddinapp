@@ -16,15 +16,15 @@ if($rc>0){
         }
         $data['data'] = $database;
     
-        $data['pesan'] = "Berhasil Login";
+        $data['pesan']['success'] = "Berhasil Login";
         $data['status'] = true;
     }else{
-        $data['pesan']['pesan'] = "Password (".$password.") salah, perhatikan penulisan dengan benar";
+        $data['pesan']['erorr']['password'] = "Password (".$password.") salah, perhatikan penulisan dengan benar";
         $data['status'] = false;
     }
 }else{
     $data['rc'] = $rc;
-    $data['pesan'] = "User (".$user.") tidak Ditemukan, Tulis Username dengan benar";
+    $data['pesan']['erorr']['username'] = "User (".$user.") tidak Ditemukan, Tulis Username dengan benar";
     $data['status'] = false;
 }
 
