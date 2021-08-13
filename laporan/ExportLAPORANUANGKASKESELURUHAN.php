@@ -30,7 +30,7 @@ $html='
          
         }
         $n=0;
-        while ($queryDonasi = mysqli_fetch_array($query)) {
+        while ($data = mysqli_fetch_array($queryDonasi)) {
             $n+=1;
             $html.='
                 <tr>
