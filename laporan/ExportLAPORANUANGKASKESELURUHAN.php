@@ -63,6 +63,44 @@ $html='
                 <td style="text-align: left;">'.rupiah($total).'</td>
             </tr>
                 ';
+                $html.='
+                <thead>
+                <tr>
+                    <th style="text-align: center;" >No</th>
+                    <th style="text-align: center;" >Uang Keluar</th>
+                    <th style="text-align: center;" >Tanggal</th>
+                    <th style="text-align: center;" >Jumlah (Rp)</th>
+                </tr>
+       
+            </thead>
+                ';
+                $nx=0;
+                    $totalkeluar=0;
+                while ($data = mysqli_fetch_array($queryKeluar)) {
+                    $nx+=1;
+                    $totalkeluar+=$data["jumlah_datainfak"];
+                    $html.='
+                        <tr>
+                        <td style="text-align: center;">'.$nx.'</td>
+                        <td style="text-align: left;"> I'.$data["uraian_keluar"].'</td>
+                        <td style="text-align: center;">'.$data["tanggal_keluar"].'</td>
+                        <td style="text-align: left;">'.rupiah($data["jumlah_keluar"]).'</td>
+                    </tr>
+                        ';
+        
+                }
+                $html.='
+                <tr>
+                <td style="text-align: center;" colspan="3">Total Khas Keluar</td>
+                <td style="text-align: left;">'.rupiah($totalkeluar).'</td>
+            </tr>
+                ';
+                $html.='
+                <tr>
+                <td style="text-align: center;" colspan="3">SALDO KAS SISA / TOTAL</td>
+                <td style="text-align: left;">'.rupiah($total-$totalkeluar).'</td>
+            </tr>
+                ';
         $html.='
     
         </tbody>
