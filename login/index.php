@@ -6,9 +6,10 @@ $password = $_POST['password'];
 $querymailcek = mysqli_query($conn, "select * from tb_user where username_user='$user' ");
 $query = mysqli_query($conn, "select * from tb_user where username_user='$user' and `password_user`='$password' ;");
 $rc=mysqli_num_rows ( $querymailcek );
+$rcp=mysqli_num_rows ( $query );
 if($rc>0){
     $data['rc'] = $rc;
-    if ($query) {
+    if ($rcp>0) {
         $database = [];
         while ($d = mysqli_fetch_array($query)) {
             $database[] = $d;
