@@ -78,7 +78,7 @@ $html='
                     $totalkeluar=0;
                 while ($data = mysqli_fetch_array($queryKeluar)) {
                     $nx+=1;
-                    $totalkeluar+=$data["jumlah_datainfak"];
+                    $totalkeluar+=$data["jumlah_keluar"];
                     $html.='
                         <tr>
                         <td style="text-align: center;">'.$nx.'</td>
