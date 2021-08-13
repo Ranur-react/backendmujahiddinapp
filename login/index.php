@@ -26,6 +26,7 @@ if($rc>0){
     $data['rc'] = $rc;
     $data['pesan']['erorr']['username'] = "User (".$user.") tidak Ditemukan, Tulis Username dengan benar";
     $data['status'] = false;
+    
 }
 
 echo json_encode($data);
