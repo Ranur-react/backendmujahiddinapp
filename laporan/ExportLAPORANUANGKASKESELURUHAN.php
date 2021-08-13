@@ -16,7 +16,7 @@ $html='
         </thead>
         <tbody>';
         include '../koneksi.php';
-        $queryDonasi = mysqli_query($conn, "select*from tb_donasimasuk join tb_datadonatur on kode_datadonatur=iddon_donmasuk;");
+        $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur;");
         $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
         $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak;");
         $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya;");
