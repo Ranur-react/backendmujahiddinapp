@@ -30,8 +30,10 @@ $html='
          
         }
         $n=0;
+        $total=0;
         while ($data = mysqli_fetch_array($queryDonasi)) {
             $n+=1;
+            $total+=$data["jumlah_donmasuk"];
             $html.='
                 <tr>
                 <td style="text-align: center;">'.$n.'</td>
@@ -44,6 +46,7 @@ $html='
         }
         while ($data = mysqli_fetch_array($queryInfak)) {
             $n+=1;
+            $total+=$data["jumlah_datainfak"];
             $html.='
                 <tr>
                 <td style="text-align: center;">'.$n.'</td>
@@ -54,6 +57,12 @@ $html='
                 ';
 
         }
+        $html.='
+                <tr>
+                <td style="text-align: center;" colspan="3">Total</td>
+                <td style="text-align: left;">'.rupiah($total).'</td>
+            </tr>
+                ';
         $html.='
     
         </tbody>
