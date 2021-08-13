@@ -19,7 +19,7 @@ if($rc>0){
         $data['pesan'] = "Berhasil Login";
         $data['status'] = true;
     }else{
-        $data['pesan'] = "Password (".$password.") salah, perhatikan penulisan dengan benar";
+        $data['pesan']['pesan'] = "Password (".$password.") salah, perhatikan penulisan dengan benar";
         $data['status'] = false;
     }
 }else{
