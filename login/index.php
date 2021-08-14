@@ -3,8 +3,8 @@ include '../koneksi.php';
 $user = $_POST['username'];
 $password = $_POST['password'];
 
-$querymailcek = mysqli_query($conn, "select * from tb_user where username_user='$user' ");
-$query = mysqli_query($conn, "select * from tb_user where username_user='$user' and `password_user`='$password' ;");
+$querymailcek = mysqli_query($conn, "select * from tb_user join tb_level on level_user=id where username_user='$user' ");
+$query = mysqli_query($conn, "select * from tb_user join tb_level on level_user=id where username_user='$user' and `password_user`='$password' ;");
 $rc=mysqli_num_rows ( $querymailcek );
 $rcp=mysqli_num_rows ( $query );
 if($rc>0){
@@ -26,7 +26,7 @@ if($rc>0){
     $data['rc'] = $rc;
     $data['pesan']['erorr']['username'] = "User (".$user.") tidak Ditemukan, Tulis Username dengan benar";
     $data['status'] = false;
-    
+
 }
 
 echo json_encode($data);
