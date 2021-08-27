@@ -2,14 +2,13 @@
 include '../koneksi.php';
 if (isset($_POST['kode_pemateri'])) {
     $kode_pemateri = $_POST['kode_pemateri'];
-
-    $query = mysqli_query($conn, " DELETE FROM `tb_pemateri` WHERE `kode_pemateri`='$kode_pemateri'");
-
+    $query = mysqli_query($conn, "UPDATE tb_pemateri SET status=CASE WHEN status='datang' THEN 'belum datang'
+ELSE 'datang' END WHERE kode_pemateri= '$kode_pemateri';");
     if ($query) {
-        $data['pesan'] = "Data Anda Berhasil Dihapus";
+        $data['pesan'] = "Data Anda Berhasil Update";
         $data['status'] = true;
     } else {
-        $data['pesan'] = "ID Data anda tidak valid Atau sudah digunakan Pada data lain";
+        $data['pesan'] = "Data anda tidak valid";
         $data['status'] = false;
         $data['data'] = $_POST;
     }
