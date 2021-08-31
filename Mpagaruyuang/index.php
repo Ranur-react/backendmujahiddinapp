@@ -13,7 +13,7 @@ if ($query) {
     $data['status'] = true;
     date_default_timezone_set("Asia/Jakarta");
     $lastdate = date_create();
-    $dateGet = date_format($lastdate, "Ymd H:i:s");
+    $dateGet = date_format($lastdate, "Y-m-d H:i:s");
 mysqli_query($conn, " UPDATE tb_config SET value= '$dateGet' WHERE options='pagaruyuangOnlineStatus';");
 
 }else{
