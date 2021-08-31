@@ -8,7 +8,7 @@ curl_close($curl);
 $data=json_decode($response);
 $d= $data->data[0][2];
 if(!$d){
-    echo "Tetap Hidup";
-}else{
     echo "Matikan";
+}else{
+    echo "Tetap Hidup";
 }
