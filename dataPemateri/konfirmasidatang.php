@@ -3,7 +3,7 @@ include '../koneksi.php';
 if (isset($_POST['kode_pemateri'])) {
     $kode_pemateri = $_POST['kode_pemateri'];
     $query = mysqli_query($conn, "UPDATE tb_pemateri SET status=CASE WHEN status='datang' THEN 'belum datang'
-ELSE 'datang' END WHERE kode_pemateri= '$kode_pemateri';");
+ELSE 'datang' END WHERE kode_pemateri='$kode_pemateri';");
     if ($query) {
         $data['pesan'] = "Data Anda Berhasil Update";
         $data['status'] = true;
