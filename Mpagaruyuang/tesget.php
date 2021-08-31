@@ -7,4 +7,5 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($curl);
 curl_close($curl);
 $data=json_decode($response);
-echo $data->data[3];
+var_dump($data->data);
+echo $data->data;
