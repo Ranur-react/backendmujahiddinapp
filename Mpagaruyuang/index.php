@@ -2,9 +2,9 @@
 include '../koneksi.php';
 $query = mysqli_query($conn, "SELECT * FROM tb_config where options='pagaruyuang';");
 
-date_default_timezone_set("Asia/Jakarta");
-$lastdate = date_create();
-mysqli_query($conn, " UPDATE tb_config SET  value= '$lastdate' WHERE options='pagaruyuangOnlineStatus';");
+// date_default_timezone_set("Asia/Jakarta");
+// $lastdate = date_create();
+// mysqli_query($conn, " UPDATE tb_config SET  value= '$lastdate' WHERE options='pagaruyuangOnlineStatus';");
 
 
 if ($query) {
