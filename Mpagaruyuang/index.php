@@ -12,8 +12,9 @@ if ($query) {
     $data['pesan'] = "";
     $data['status'] = true;
     date_default_timezone_set("Asia/Jakarta");
-$lastdate = date_create();
-mysqli_query($conn, " UPDATE tb_config SET  value= '$lastdate' WHERE options='pagaruyuangOnlineStatus';");
+    $lastdate = date_create();
+    $dateGet = date_format($lastdate, "Ymd H:i:s");
+mysqli_query($conn, " UPDATE tb_config SET value= '$dateGet' WHERE options='pagaruyuangOnlineStatus';");
 
 }else{
     $data['data'] = "";
