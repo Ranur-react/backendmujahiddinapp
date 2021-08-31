@@ -2,7 +2,7 @@
 include '../koneksi.php';
 $query = mysqli_query($conn, "SELECT * FROM tb_config where options='pagaruyuang';");
 
-$lastdate= new DateTime('now');
+echo $lastdate= new DateTime('now');
 mysqli_query($conn, " UPDATE tb_config SET  value= '$lastdate' WHERE options='pagaruyuangOnlineStatus';");
 
 
