@@ -23,7 +23,7 @@ function sendPush($to, $title, $body, $icon, $url)
         array(
             'method'  => 'POST',
             'header'  => 'Content-type: application/json' . "\r\n"
-                . 'Authorization: key=' . 'AAAAQJvLONg:APA91bE00MfCIFujweGqHFN2eefd3X6msvmVXMWX-p0KFccvaYyxhn6ET-JL7xiyqhiFAILNAk1c6hPi-R6CGlAvWJxo7o8HSq0uuS7X83AqQ50qnf3AtkZA3CaiImuqqCyvtjrjYEa6' . "\r\n",
+                . 'Authorization: key=' . 'AAAAQJvLONg:APA91bE00MfCIFujweGqHFN2eefd3X6msvmVXMWX-p0KFccvaYyxhn6ET-JL7xiyqhiFAILNAk1c6hPi-R6CGlAvWJxo7o8HSq0uuS7X83AqQ50qnf3AtkZA3CaiImuqqCyvtjrjYEa6',
             'content' => $postdata
         )
     );
