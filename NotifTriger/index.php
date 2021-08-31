@@ -37,4 +37,4 @@ function sendPush($to, $title, $body, $icon, $url)
     } else return false;
 }
 
- sendPush('dJTWVLO1QU2YJgvOgV0MQo:APA91bFZxIB2jEgGv-LzDOa9evAv-PTmDLqsIl50IEtJbSp0Fp5D0-6AWKSK7htN4PIipHasxopVKzHSEqDjA8YB1fFx9GDMZmXr8cQmssre5xKfmHH2VGGnGx2nqX_bklLV9rsecJ9', 'Judul Pesan', 'Disni Pesan', 'https://anysite.com/some_image.png', 'https://openthissiteonclick.com');
+ sendPush('dJTWVLO1QU2YJgvOgV0MQo:APA91bFZxIB2jEgGv-LzDOa9evAv-PTmDLqsIl50IEtJbSp0Fp5D0-6AWKSK7htN4PIipHasxopVKzHSEqDjA8YB1fFx9GDMZmXr8cQmssre5xKfmHH2VGGnGx2nqX_bklLV9rsecJ99', 'Judul Pesan', 'Disni Pesan', 'https://anysite.com/some_image.png', 'https://openthissiteonclick.com');
