@@ -9,5 +9,6 @@ curl_close($curl);
 $data=json_decode($response);
 // var_dump($data->data);
 echo "isi data->data";
-echo $data->data;
+$d= $data->data;
+echo $d[0];
 // echo $data->data;
