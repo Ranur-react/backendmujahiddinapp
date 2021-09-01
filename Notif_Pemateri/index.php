@@ -2,7 +2,8 @@
 include '../koneksi.php';
 include '../Notiflibrary/index.php';
 
-
+//Jumlah device Maximal penerima notif
+$jumlahDevice=100;
 
 //key dan configurations
     $fetchQry1 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM tb_FCMConfig where tb_FCMConfig.key='FCM_AUTH_KEY';"));
