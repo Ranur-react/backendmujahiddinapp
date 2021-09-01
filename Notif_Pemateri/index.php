@@ -13,8 +13,8 @@ $urlApi=$fetchQry2['value'];
 //---end
 
 //Kontent Config
-$title="Pemateri ". $NamaUstadz." Sudah Datang";
-$body="Hallo Jema'ah Mesjid Mujahidin, Pemateri Kegiatan deng Ustadz ". $NamaUstadz ." Akan segera berlangsung, karena ustadz sudah di konfirmasi datang";
+$title="Sudah Datang ";
+$body="Ustadz ". $NamaUstadz ."  Sudah Datang skegiatan dengan pemateri Akan segera berlangsung, karena pemateri sudah di konfirmasi datang";
     $fetchQry3 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM tb_FCMConfig where tb_FCMConfig.key='utadzsomad';"));
 $imagesContent= $fetchQry3['value'];
 $fetchQry4 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM tb_FCMConfig where tb_FCMConfig.key='FCM_ICON';"));

@@ -10,8 +10,8 @@ function sendPush($to, $title, $body, $imagesContent, $icon, $urldst, $keyApi, $
                 'title' => $title,
                 'image'=>$imagesContent,
                 'body' => $body,
-                'icon' => $icon,
-                'click_action' => $urldst
+                // 'icon' => $icon,    
+                // 'click_action' => $urldst
             ],
             "priority"=> "high",
             "soundName"=> "default",

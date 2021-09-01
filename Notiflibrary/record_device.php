@@ -9,7 +9,7 @@ if (isset($_POST['token'])) {
     $lastOnline = date_format($lastdate, "Y-m-d H:i:s");
 
     $query = mysqli_query($conn, " INSERT INTO tb_FCM_Devices 
-    values ('$token', '$platform', '$lastOnline');");
+    values ('$token', '$os', '$lastOnline');");
     $queryUpdate = mysqli_query($conn, " UPDATE tb_FCM_Devices SET  last_online= '$lastOnline' WHERE token_id= '$token';");
 
     if ($query) {
