@@ -32,7 +32,7 @@ function sendPush($to, $title, $body, $imagesContent, $icon, $urldst, $keyApi, $
     $context  = stream_context_create($opts);
 
     $result = file_get_contents($urlApi, false, $context);
-    var_dump($result);
+    // var_dump($result);
     if ($result) {
         return json_decode($result);
     } else return false;

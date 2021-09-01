@@ -1,10 +1,10 @@
 <?php
-include '../koneksi.php';
 include '../Notiflibrary/index.php';
 
 //Jumlah device Maximal penerima notif
 $jumlahDevice=100;
-$NamaUstadz="Ustadz Patang";
+$fetchQry7 = mysqli_fetch_array(mysqli_query($conn, " SELECT * FROM tb_pemateri WHERE kode_pemateri='$kode_pemateri';"));
+$NamaUstadz=$fetchQry7['nama_pemateri'];
 //key dan configurations
     $fetchQry1 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM tb_FCMConfig where tb_FCMConfig.key='FCM_AUTH_KEY';"));
 $keyApi=$fetchQry1['value'];
@@ -26,10 +26,11 @@ $urldst= $fetchQry5['value'];
 
 //Destionatyions Device
 $fetchQry6= mysqli_query($conn, "Select * FROM tb_FCM_Devices where last_online in (SELECT MAX(last_online) from tb_FCM_Devices Group by date(last_online) ) order by last_online desc limit 10;");
+$database = [];
 while ($d = mysqli_fetch_array($fetchQry6)) {
-    sendPush($d['token_id'], $title, $body, $imagesContent, $icon, $urldst, $keyApi, $urlApi);
+    $database[$d['token_id']] =sendPush($d['token_id'], $title, $body, $imagesContent, $icon, $urldst, $keyApi, $urlApi);
 }
-
+$data['Sending_Progrres'] = $database;
 
 
 ?>
