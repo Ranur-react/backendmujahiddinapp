@@ -4,7 +4,7 @@ include '../Notiflibrary/index.php';
 
 //Jumlah device Maximal penerima notif
 $jumlahDevice=100;
-
+$NamaUstadz="Ustadz Patang";
 //key dan configurations
     $fetchQry1 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM tb_FCMConfig where tb_FCMConfig.key='FCM_AUTH_KEY';"));
 $keyApi=$fetchQry1['value'];
@@ -27,10 +27,9 @@ $urldst= $fetchQry5['value'];
 //Destionatyions Device
 $fetchQry6= mysqli_query($conn, "Select * FROM tb_FCM_Devices where last_online in (SELECT MAX(last_online) from tb_FCM_Devices Group by date(last_online) ) order by last_online desc limit 10;");
 while ($d = mysqli_fetch_array($fetchQry6)) {
-    echo "<br> - - -";
-    echo $d['token_id'];
+    sendPush($d['token_id'], $title, $body, $imagesContent, $icon, $urldst, $keyApi, $urlApi);
 }
-// sendPush($to, $title, $body, $imagesContent, $icon, $urldst, $keyApi, $urlApi)
+
 
 
 ?>
