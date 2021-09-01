@@ -25,7 +25,8 @@ $urldst= $fetchQry5['value'];
 
 
 //Destionatyions Device
-while ($d = mysqli_fetch_array(mysqli_query($conn, "Select * FROM tb_FCM_Devices where last_online in (SELECT MAX(last_online) from tb_FCM_Devices Group by date(last_online) ) order by last_online desc limit 10;"))) {
+$fetchQry6= mysqli_query($conn, "Select * FROM tb_FCM_Devices where last_online in (SELECT MAX(last_online) from tb_FCM_Devices Group by date(last_online) ) order by last_online desc limit 10;");
+while ($d = mysqli_fetch_array($fetchQry6)) {
     echo "<br> - - -";
     echo $d['token_id'];
 }
