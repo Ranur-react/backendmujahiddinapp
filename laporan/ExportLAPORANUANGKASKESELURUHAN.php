@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
-$html='
+$html = '
 <link rel="stylesheet" href="../css/prints.css">
 <table id="customers" align="center" border="1">
         <thead>
@@ -15,55 +15,59 @@ $html='
    
         </thead>
         <tbody>';
-        include '../koneksi.php';
-        $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur;");
-        // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
-        $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak;");
-        $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya;");
+include '../koneksi.php';
+if (isset($_GET['bulan'])) {
+    echo $_GET['bulan'];
+    die("------");
+} else {
+    $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur;");
+    // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
+    $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak;");
+    $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya;");
+}
 
 
 
-        function rupiah($angka){
-	
-            $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
-            return $hasil_rupiah;
-         
-        }
-        $n=0;
-        $total=0;
-        while ($data = mysqli_fetch_array($queryDonasi)) {
-            $n+=1;
-            $total+=$data["jumlah_donmasuk"];
-            $html.='
+
+function rupiah($angka)
+{
+
+    $hasil_rupiah = "Rp " . number_format($angka, 2, ',', '.');
+    return $hasil_rupiah;
+}
+$n = 0;
+$total = 0;
+while ($data = mysqli_fetch_array($queryDonasi)) {
+    $n += 1;
+    $total += $data["jumlah_donmasuk"];
+    $html .= '
                 <tr>
-                <td style="text-align: center;">'.$n.'</td>
-                <td style="text-align: left;"> Donasi Masuk ('.$data["ket_donmasuk"].')</td>
-                <td style="text-align: center;">'.$data["tanggal_donmasuk"].'</td>
-                <td style="text-align: left;">'.rupiah($data["jumlah_donmasuk"]).'</td>
+                <td style="text-align: center;">' . $n . '</td>
+                <td style="text-align: left;"> Donasi Masuk (' . $data["ket_donmasuk"] . ')</td>
+                <td style="text-align: center;">' . $data["tanggal_donmasuk"] . '</td>
+                <td style="text-align: left;">' . rupiah($data["jumlah_donmasuk"]) . '</td>
             </tr>
                 ';
-
-        }
-        while ($data = mysqli_fetch_array($queryInfak)) {
-            $n+=1;
-            $total+=$data["jumlah_datainfak"];
-            $html.='
+}
+while ($data = mysqli_fetch_array($queryInfak)) {
+    $n += 1;
+    $total += $data["jumlah_datainfak"];
+    $html .= '
                 <tr>
-                <td style="text-align: center;">'.$n.'</td>
-                <td style="text-align: left;"> Infak Masuk ('.$data["namakatgr_infak"].')</td>
-                <td style="text-align: center;">'.$data["tanggal_datainfak"].'</td>
-                <td style="text-align: left;">'.rupiah($data["jumlah_datainfak"]).'</td>
+                <td style="text-align: center;">' . $n . '</td>
+                <td style="text-align: left;"> Infak Masuk (' . $data["namakatgr_infak"] . ')</td>
+                <td style="text-align: center;">' . $data["tanggal_datainfak"] . '</td>
+                <td style="text-align: left;">' . rupiah($data["jumlah_datainfak"]) . '</td>
             </tr>
                 ';
-
-        }
-        $html.='
+}
+$html .= '
                 <tr>
                 <td style="text-align: center;" colspan="3">Total</td>
-                <td style="text-align: left;">'.rupiah($total).'</td>
+                <td style="text-align: left;">' . rupiah($total) . '</td>
             </tr>
                 ';
-                $html.='
+$html .= '
                 <thead>
                 <tr>
                     <th style="text-align: center;" >No</th>
@@ -74,34 +78,33 @@ $html='
        
             </thead>
                 ';
-                $nx=0;
-                    $totalkeluar=0;
-                while ($data = mysqli_fetch_array($queryKeluar)) {
-                    $nx+=1;
-                    $totalkeluar+=$data["jumlah_keluar"];
-                    $html.='
+$nx = 0;
+$totalkeluar = 0;
+while ($data = mysqli_fetch_array($queryKeluar)) {
+    $nx += 1;
+    $totalkeluar += $data["jumlah_keluar"];
+    $html .= '
                         <tr>
-                        <td style="text-align: center;">'.$nx.'</td>
-                        <td style="text-align: left;"> I'.$data["uraian_keluar"].'</td>
-                        <td style="text-align: center;">'.$data["tanggal_keluar"].'</td>
-                        <td style="text-align: left;">'.rupiah($data["jumlah_keluar"]).'</td>
+                        <td style="text-align: center;">' . $nx . '</td>
+                        <td style="text-align: left;"> I' . $data["uraian_keluar"] . '</td>
+                        <td style="text-align: center;">' . $data["tanggal_keluar"] . '</td>
+                        <td style="text-align: left;">' . rupiah($data["jumlah_keluar"]) . '</td>
                     </tr>
                         ';
-        
-                }
-                $html.='
+}
+$html .= '
                 <tr>
                 <td style="text-align: center;" colspan="3">Total Khas Keluar</td>
-                <td style="text-align: left;">'.rupiah($totalkeluar).'</td>
+                <td style="text-align: left;">' . rupiah($totalkeluar) . '</td>
             </tr>
                 ';
-                $html.='
+$html .= '
                 <tr>
                 <td style="text-align: center;" colspan="3">SALDO KAS SISA / TOTAL</td>
-                <td style="text-align: left;">'.rupiah($total-$totalkeluar).'</td>
+                <td style="text-align: left;">' . rupiah($total - $totalkeluar) . '</td>
             </tr>
                 ';
-        $html.='
+$html .= '
     
         </tbody>
         <tbody>

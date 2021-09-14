@@ -12,7 +12,7 @@ $keyApi=$fetchQry1['value'];
 $urlApi=$fetchQry2['value'];
 //---end
 
-//Kontent Config
+//Kontent Config`
 $title="Sudah Datang ";
 $body="Ustadz ". $NamaUstadz ."  Sudah Datang skegiatan dengan pemateri Akan segera berlangsung, karena pemateri sudah di konfirmasi datang";
     $fetchQry3 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM tb_FCMConfig where tb_FCMConfig.key='utadzsomad';"));
