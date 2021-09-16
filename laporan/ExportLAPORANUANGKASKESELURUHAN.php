@@ -5,7 +5,8 @@ $mpdf = new \Mpdf\Mpdf();
 include '../koneksi.php';
 if (isset($_GET['bulan'])) {
 
-$month_num = 12;
+$month_num =
+    $_GET['bulan'];;
 
 // Use mktime() and date() function to
 // convert number to month name
@@ -33,8 +34,8 @@ $html = '
         </thead>
         <tbody>';
 
-    echo $_GET['bulan'];
-    die("------");
+    // echo $_GET['bulan'];
+    // die("------");
 } else {
 
 
