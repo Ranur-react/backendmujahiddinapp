@@ -2,7 +2,43 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
+include '../koneksi.php';
+if (isset($_GET['bulan'])) {
+
+$month_num = 12;
+
+// Use mktime() and date() function to
+// convert number to month name
+$month_name = date("F", mktime(0, 0, 0, $month_num, 10));
+
+// Display month name
+ $month_name . "\n";
+
+
 $html = '
+<link rel="stylesheet" href="../css/prints.css">
+<table id="customers" align="center" border="1">
+            <tr>
+                <td style="text-align: center;" colspan="3git ">Cetak Laporam Khas Bulan $month_name </td>
+               
+            </tr>
+        <thead>
+            <tr>
+                <th style="text-align: center;" >No</th>
+                <th style="text-align: center;" >Uang Masuk</th>
+                <th style="text-align: center;" >Tanggal</th>
+                <th style="text-align: center;" >Jumlah (Rp)</th>
+            </tr>
+   
+        </thead>
+        <tbody>';
+
+    echo $_GET['bulan'];
+    die("------");
+} else {
+
+
+    $html = '
 <link rel="stylesheet" href="../css/prints.css">
 <table id="customers" align="center" border="1">
         <thead>
@@ -15,11 +51,8 @@ $html = '
    
         </thead>
         <tbody>';
-include '../koneksi.php';
-if (isset($_GET['bulan'])) {
+
     echo $_GET['bulan'];
-    die("------");
-} else {
     $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur;");
     // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
     $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak;");
