@@ -19,7 +19,7 @@ if (isset($_GET['bulan'])) {
 <link rel="stylesheet" href="../css/prints.css">
 <table id="customers" align="center" border="1">
             <tr>
-                <td style="text-align: center;" colspan="3git ">Cetak Laporam Khas Bulan '.$month_name.' </td>
+                <td style="text-align: center;" colspan="4"> Cetak Laporam Khas Bulan '.$month_name.' </td>
                
             </tr>
         <thead>
