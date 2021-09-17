@@ -5,22 +5,21 @@ $mpdf = new \Mpdf\Mpdf();
 include '../koneksi.php';
 if (isset($_GET['bulan'])) {
 
-$month_num =
-    $_GET['bulan'];;
+    $month_num =$_GET['bulan'];;
 
-// Use mktime() and date() function to
-// convert number to month name
-$month_name = date("F", mktime(0, 0, 0, $month_num, 10));
+    // Use mktime() and date() function to
+    // convert number to month name
+    $month_name = date("F", mktime(0, 0, 0, $month_num, 10));
 
-// Display month name
- $month_name . "\n";
+    // Display month name
+    $month_name . "\n";
 
 
-$html = '
+    $html = '
 <link rel="stylesheet" href="../css/prints.css">
 <table id="customers" align="center" border="1">
             <tr>
-                <td style="text-align: center;" colspan="3git ">Cetak Laporam Khas Bulan $month_name </td>
+                <td style="text-align: center;" colspan="3git ">Cetak Laporam Khas Bulan '.$month_name.' </td>
                
             </tr>
         <thead>
@@ -33,7 +32,11 @@ $html = '
    
         </thead>
         <tbody>';
-
+    
+    $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur;");
+    // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
+    $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak;");
+    $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya;");
     // echo $_GET['bulan'];
     // die("------");
 } else {
@@ -53,7 +56,6 @@ $html = '
         </thead>
         <tbody>';
 
-    echo $_GET['bulan'];
     $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur;");
     // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
     $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak;");
