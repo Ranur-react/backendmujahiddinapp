@@ -6,7 +6,7 @@ $jumlahDevice=100;
 $fetchQry7 = mysqli_fetch_array(mysqli_query($conn, " SELECT * FROM tb_pemateri WHERE kode_pemateri='$kode_pemateri';"));
 $NamaUstadz=$fetchQry7['nama_pemateri'];
 $status = $fetchQry7['status'];
-if($status== 'belum datang'){
+if($status== 'datang'){
 
     //key dan configurations
     $fetchQry1 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM tb_FCMConfig where tb_FCMConfig.key='FCM_AUTH_KEY';"));
