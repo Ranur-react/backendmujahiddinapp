@@ -19,7 +19,7 @@ if (isset($_GET['bulan'])) {
 <link rel="stylesheet" href="../css/prints.css">
 <table id="customers" align="center" border="1">
             <tr>
-                <td style="text-align: center;" colspan="4"> Cetak Laporam Khas Bulan '.$month_name.' </td>
+                <td style="text-align: center;" colspan="4"> Cetak Laporam Khas Bulan '.$month_num.' </td>
                
             </tr>
         <thead>
@@ -33,13 +33,46 @@ if (isset($_GET['bulan'])) {
         </thead>
         <tbody>';
     
-    $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur;");
+    $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur WHERE MONTH(tanggal_donmasuk)='$month_num';");
     // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
-    $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak;");
-    $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya;");
+    $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak where month(tanggal_datainfak)='$month_num';");
+    $queryKeluar = mysqli_query($conn, " SSELECT * FROM tb_uangkeluarlainnya where month(tanggal_keluar)='$month_num';");
     // echo $_GET['bulan'];
     // die("------");
-} else {
+} else if (isset($_GET['tahun'])) {
+
+    $tahun = $_GET['tahun'];;
+
+    
+
+
+    $html = '
+<link rel="stylesheet" href="../css/prints.css">
+<table id="customers" align="center" border="1">
+            <tr>
+                <td style="text-align: center;" colspan="4"> Cetak Laporam Khas Tahun ' . $tahun . ' </td>
+               
+            </tr>
+        <thead>
+            <tr>
+                <th style="text-align: center;" >No</th>
+                <th style="text-align: center;" >Uang Masuk</th>
+                <th style="text-align: center;" >Tanggal</th>
+                <th style="text-align: center;" >Jumlah (Rp)</th>
+            </tr>
+   
+        </thead>
+        <tbody>';
+
+    $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur WHERE year(tanggal_donmasuk)='$tahun';");
+    // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
+    $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak where year(tanggal_datainfak)='$tahun';");
+    $queryKeluar = mysqli_query($conn, " SSELECT * FROM tb_uangkeluarlainnya where year(tanggal_keluar)='$tahun';");
+    // echo $_GET['bulan'];
+    // die("------");
+}  
+
+else {
 
 
     $html = '
