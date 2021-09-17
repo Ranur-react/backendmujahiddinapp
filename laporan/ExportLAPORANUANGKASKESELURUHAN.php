@@ -39,7 +39,7 @@ if (isset($_GET['bulan'])) {
     $queryKeluar = mysqli_query($conn, " SSELECT * FROM tb_uangkeluarlainnya where month(tanggal_keluar)='$month_num';");
     // echo $_GET['bulan'];
     // die("------");
-} else if (isset($_GET['tahun'])) {
+} else if(isset($_GET['tahun'])) {
 
     $tahun = $_GET['tahun'];;
 
