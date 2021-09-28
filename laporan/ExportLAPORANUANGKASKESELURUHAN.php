@@ -71,6 +71,10 @@ JOIN `tb_datapenerima` ON `id_dataspenerima`=`id_penerima` where month(tanggal_p
     // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
     $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak where year(tanggal_datainfak)='$tahun';");
     $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya where year(tanggal_keluar)='$tahun';");
+    $queryKeluarDonasi = mysqli_query($conn, " SELECT*FROM `tb_penerimaan` 
+JOIN `tb_jenisdonasi` ON `id_jenisdon`=`id_jenispenerima`
+JOIN `tb_datapenerima` ON `id_dataspenerima`=`id_penerima` where year(tanggal_penerima)='$tahun';");
+
     // echo $_GET['bulan'];
     // die("------");
 } else {
@@ -103,6 +107,9 @@ JOIN `tb_datapenerima` ON `id_dataspenerima`=`id_penerima` where month(tanggal_p
     // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
     $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak ");
     $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya ");
+    $queryKeluarDonasi = mysqli_query($conn, " SELECT*FROM `tb_penerimaan` 
+JOIN `tb_jenisdonasi` ON `id_jenisdon`=`id_jenispenerima`
+JOIN `tb_datapenerima` ON `id_dataspenerima`=`id_penerima` ");
 }
 
 
