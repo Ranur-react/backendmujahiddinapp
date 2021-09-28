@@ -67,7 +67,7 @@ if (isset($_GET['bulan'])) {
     $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur WHERE year(tanggal_donmasuk)='$tahun';");
     // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
     $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak where year(tanggal_datainfak)='$tahun';");
-    $queryKeluar = mysqli_query($conn, " SSELECT * FROM tb_uangkeluarlainnya where year(tanggal_keluar)='$tahun';");
+    $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya where year(tanggal_keluar)='$tahun';");
     // echo $_GET['bulan'];
     // die("------");
 } else {
