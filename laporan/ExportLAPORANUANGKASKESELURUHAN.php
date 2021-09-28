@@ -37,6 +37,9 @@ if (isset($_GET['bulan'])) {
     // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
     $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak where month(tanggal_datainfak)='$month_num';");
     $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya where month(tanggal_keluar)='$month_num';");
+    $queryKeluarDonasi = mysqli_query($conn, " SELECT*FROM `tb_penerimaan` 
+JOIN `tb_jenisdonasi` ON `id_jenisdon`=`id_jenispenerima`
+JOIN `tb_datapenerima` ON `id_dataspenerima`=`id_penerima` where month(tanggal_penerima)='$month_num';");
     // echo $_GET['bulan'];
     // die("------");
 } else if (isset($_GET['tahun'])) {
@@ -73,9 +76,18 @@ if (isset($_GET['bulan'])) {
 } else {
 
 
+
+
+
+
+
     $html = '
 <link rel="stylesheet" href="../css/prints.css">
 <table id="customers" align="center" border="1">
+            <tr>
+                <td style="text-align: center;" colspan="4"> Cetak Laporam Khas  </td>
+               
+            </tr>
         <thead>
             <tr>
                 <th style="text-align: center;" >No</th>
@@ -87,10 +99,10 @@ if (isset($_GET['bulan'])) {
         </thead>
         <tbody>';
 
-    $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur;");
+    $queryDonasi = mysqli_query($conn, " select*from tb_donasimasuk join tb_datadonatur on iddon_donmasuk=kode_datadonatur ");
     // $queryPenermaan = mysqli_query($conn, " SELECT * FROM tb_penerimaan;");
-    $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak;");
-    $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya;");
+    $queryInfak = mysqli_query($conn, " SELECT * FROM tb_datainfak join `tb_infak` on kodkatgr_infak=kodkatgr_infak ");
+    $queryKeluar = mysqli_query($conn, " SELECT * FROM tb_uangkeluarlainnya ");
 }
 
 
@@ -138,7 +150,32 @@ $html .= '
                 <thead>
                 <tr>
                     <th style="text-align: center;" >No</th>
-                    <th style="text-align: center;" >Uang Keluar</th>
+                    <th style="text-align: center;" >Uang Keluar Donasi</th>
+                    <th style="text-align: center;" >Tanggal</th>
+                    <th style="text-align: center;" >Jumlah (Rp)</th>
+                </tr>
+       
+            </thead>
+                ';
+$nx = 0;
+$totalkeluar = 0;
+while ($data = mysqli_fetch_array($queryKeluarDonasi)) {
+    $nx += 1;
+    $totalkeluar += $data["jumlah_keluar"];
+    $html .= '
+                        <tr>
+                        <td style="text-align: center;">' . $nx . '</td>
+                        <td style="text-align: left;"> Pemberian Donasi ~' . $data["nama_jenisdon"] . '~ Kepada ~' . $data["nama_penerima"] . ' ~ </td>
+                        <td style="text-align: center;">' . $data["tanggal_penerima"] . '</td>
+                        <td style="text-align: left;">' . rupiah($data["jumlah_donasi"]) . '</td>
+                    </tr>
+                        ';
+}
+$html .= '
+                <thead>
+                <tr>
+                    <th style="text-align: center;" >No</th>
+                    <th style="text-align: center;" >Uang Keluar Lainnya</th>
                     <th style="text-align: center;" >Tanggal</th>
                     <th style="text-align: center;" >Jumlah (Rp)</th>
                 </tr>
