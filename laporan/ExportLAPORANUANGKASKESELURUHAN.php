@@ -190,7 +190,6 @@ $html .= '
             </thead>
                 ';
 $nx = 0;
-$totalkeluar = 0;
 while ($data = mysqli_fetch_array($queryKeluar)) {
     $nx += 1;
     $totalkeluar += $data["jumlah_keluar"];
